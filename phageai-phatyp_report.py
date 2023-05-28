@@ -36,7 +36,7 @@ print(phatyp_complete.head())
 
 
 #JOIN OF PHAGEAI AND PHATYP##################################
-# joined_df = pd.merge(phageai_complete, phatyp_complete, left_on='phageai_fasta_name', right_on='fasta_name', how='inner')
+joined_df = pd.merge(phageai_complete, phatyp_complete, left_on='phageai_fasta_name', right_on='fasta_name', how='inner')
 # print(joined_df)
 
 # joined_df.to_csv('phatyp_phageai_report.csv', index=False)
@@ -54,33 +54,19 @@ for gca_id in phatyp_complete['fasta_name']:
 temperate_scores_phageai = phageai_complete.loc[phageai_complete['phageai_predicted_lifestyle'] == 'Temperate', 'phageai_prediction_accuracy'].mean()
 temperate_scores_phatyp = phatyp_complete.loc[phatyp_complete['phatyp_Pred'] == 'temperate', 'phatyp_Score'].mean()
 
-# print(f"PhageAI: virulent count is {len(phageai_virulent_count)} temperate count is {len(phageai_temperate_count)}" )
-# print(f"PhaTYP: virulent count is {len(phatyp_virulent_count)} temperate count is {len(phatyp_temperate_count)}" )
+print(f"PhageAI: virulent count is {len(phageai_virulent_count)} temperate count is {len(phageai_temperate_count)}" )
+print(f"PhaTYP: virulent count is {len(phatyp_virulent_count)} temperate count is {len(phatyp_temperate_count)}" )
 
-# print("Mean score for temperate rows in PhageAI:", temperate_scores_phageai)
-# print("Mean score for temperate rows in PhaTYP:", temperate_scores_phatyp*100)
+print("Mean score for temperate rows in PhageAI:", temperate_scores_phageai)
+print("Mean score for temperate rows in PhaTYP:", temperate_scores_phatyp*100)
 
-matching_indexes=[]
+matching_temperates=[]
 for i in phatyp_temperate_count["fasta_name"]:
-    print(i)
     for t in phageai_temperate_count["phageai_fasta_name"]:
-        print(t)
-
         if i == t:
-            print(i, 'aqui')
-            print(phatyp_temperate_count.index[phatyp_temperate_count["fasta_name"] == i], 'aqui')
-            # matching_indexes.append(phatyp_temperate_count.index[phatyp_temperate_count["fasta_name"] == i])
-print(phatyp_temperate_count)
-print(matching_indexes)
-# Assuming df1 and df2 are the DataFrames you want to compare
-# for index in matching_indexes:
-#     row_df1 = df1.loc[index]
-#     row_df2 = df2.loc[index]
-    
-#     # Compare the rows and perform desired operations
-#     if row_df1.equals(row_df2):
-#         # Rows are identical
-#         pass
-#     else:
-#         # Rows are different
-#         pass
+            matching_temperates.append(i)
+# print(matching_temperates)
+
+for index in matching_temperates:
+    print(joined_df.loc[joined_df['phageai_fasta_name']==index]) #temperate from phatyp are coincident with phageai
+
