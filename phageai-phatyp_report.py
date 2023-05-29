@@ -38,9 +38,10 @@ print(phatyp_complete.head())
 #JOIN OF PHAGEAI AND PHATYP##################################
 joined_df = pd.merge(phageai_complete, phatyp_complete, left_on='phageai_fasta_name', right_on='fasta_name', how='inner')
 # print(joined_df)
-
 # joined_df.to_csv('phatyp_phageai_report.csv', index=False)
 
+
+#RESULT ANALISYS
 for gca_id in phageai_complete['phageai_fasta_name']:
     phageai_virulent_count=phageai_complete.loc[phageai_complete['phageai_predicted_lifestyle'] == 'Virulent']
     phageai_temperate_count=phageai_complete.loc[phageai_complete['phageai_predicted_lifestyle'] == 'Temperate']
