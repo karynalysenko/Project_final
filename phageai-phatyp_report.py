@@ -1,12 +1,12 @@
 import pandas as pd
 import os
-# import csv
+import csv
 import re
 
 
 #PhageAI#########################################
-report1 = pd.read_csv("/home/karyna/Project/PhageAI/phageai_report1.csv").add_prefix('phageai_')
-report2 = pd.read_csv("/home/karyna/Project/PhageAI/phageai_report2.csv").add_prefix('phageai_')
+report1 = pd.read_csv("/home/karyna/Project_final/PhageAI/phageai_report1.csv").add_prefix('phageai_')
+report2 = pd.read_csv("/home/karyna/Project_final/PhageAI/phageai_report2.csv").add_prefix('phageai_')
 
 phageai_complete = pd.concat([report1,report2], axis = 0)
 print(phageai_complete.head())
@@ -14,7 +14,7 @@ print(phageai_complete.head())
 
 #PhaTYP#########################################
 
-directory = "/home/karyna/Project/PhaTYP/phatyp_results"
+directory = "/home/karyna/Project_final/PhaTYP/phatyp_results"
 
 def paths_aux(directory, csv_paths={}):
    for subdir, dirs, files in os.walk(directory):
@@ -67,7 +67,8 @@ for i in phatyp_temperate_count["fasta_name"]:
         if i == t:
             matching_temperates.append(i)
 # print(matching_temperates)
-
-for index in matching_temperates:
-    print(joined_df.loc[joined_df['phageai_fasta_name']==index]) #temperate from phatyp are coincident with phageai
-
+with open("/home/karyna/Project_final/temperate_phageai_phatyp.csv", "w", newline="") as csvfile:
+    writer = csv.writer(csvfile)
+    writer.writerow(joined_df.columns)
+    for index in matching_temperates:
+        writer.writerow(joined_df.loc[joined_df['phageai_fasta_name']==index].values[0])
