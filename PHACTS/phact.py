@@ -12,6 +12,8 @@ PHACTS_TOOL = "/home/karyna/.local/lib/python3.10/site-packages/PHACTS/phacts.py
 # Path to the folder containing the files to be tested
 main_dir = '/home/karyna/Project_final/data/'
 TEST_FOLDERS = ['GCA_028515195.1', 'GCA_027582695.1', 'GCA_028515145.1', 'GCA_014656645.1', 'GCA_002605545.1', 'GCA_028514995.1', 'GCA_004989725.1', 'GCA_028515085.1']
+TEST_FOLDERS = ['GCA_028515195.1', 'GCA_027582695.1', 'GCA_028515145.1', 'GCA_002605545.1', 'GCA_028514995.1', 'GCA_004989725.1', 'GCA_028515085.1']
+
 index=0
 
 
@@ -30,7 +32,6 @@ for index in TEST_FOLDERS:
         # Read the fasta file and extract the sequence
         record = SeqIO.read(file_path, "fasta")
         dna_sequence = Seq(str(record.seq))
-
         # Get the translation table for table 11
         translation_table = CodonTable.unambiguous_dna_by_id[11]
 
@@ -43,7 +44,7 @@ for index in TEST_FOLDERS:
                                     id=record.id,
                                     description=record.description), output_path, "fasta")
         
-        # # Check if the file of translated sequence was created
+        # Check if the file of translated sequence was created
         if os.path.isfile(output_path):
             print(output_path)
             # Run phacts.py on the file
