@@ -12,7 +12,7 @@ PHACTS_TOOL = "/home/karyna/.local/lib/python3.10/site-packages/PHACTS/phacts.py
 # Path to the folder containing the files to be tested
 main_dir = '/home/karyna/Project_final/data/'
 TEST_FOLDERS = ['GCA_028515195.1', 'GCA_027582695.1', 'GCA_028515145.1', 'GCA_014656645.1', 'GCA_002605545.1', 'GCA_028514995.1', 'GCA_004989725.1', 'GCA_028515085.1']
-TEST_FOLDERS = ['GCA_002605545.1']
+TEST_FOLDERS = ['GCA_028514995.1','GCA_004989725.1', 'GCA_028515085.1']
 
 index=0
 
