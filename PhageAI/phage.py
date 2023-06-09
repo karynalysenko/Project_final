@@ -5,18 +5,19 @@ import re
 from phageai.lifecycle.classifier import LifeCycleClassifier
 
 # pip install phageai
-# change the access_token
+# change the access_token "lcc"
 # change main_dir_path, start_subdirectory
 # change csv_file and out_file names for each batch 
 
 
 lcc = LifeCycleClassifier(access_token='wGaMa7QMgr8PSIhDbwDQEHAAcGkMVN')
 main_dir_path = '/home/karyna/Project/data'
-start_subdirectory = '/home/karyna/Project/data/GCA_000887755.1'
+start_accession = 'GCA_000887755.1'
 csv_file = "phageai_report2.csv"
 out_file='pAI_2.pkl'
 
 
+start_subdirectory=main_dir_path+start_accession
 def SelectGenome(main_dir_path, start_subdirectory):
     subdirectories = sorted([os.path.join(main_dir_path, subdir) for subdir in os.listdir(main_dir_path) if os.path.isdir(os.path.join(main_dir_path, subdir))])
     start_index = subdirectories.index(start_subdirectory)

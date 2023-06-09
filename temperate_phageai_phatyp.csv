@@ -7,15 +7,3 @@ GCA_002605545.1,Temperate,90.8,39.83,47575,GCA_002605545.1,KP861230.1,47575,temp
 GCA_028514995.1,Temperate,78.76,40.06,55181,GCA_028514995.1,OQ101248.1,55181,temperate,0.999713
 GCA_004989725.1,Temperate,86.61,40.17,52031,GCA_004989725.1,MH115576.1,52031,temperate,0.9842462
 GCA_028515085.1,Temperate,93.89,39.43,32415,GCA_028515085.1,OQ101253.1,32415,temperate,0.5752444
-,,,,,,,,,
-,Prediction accuracy,,,,,,,,
-Genbank name,PhageAI,PhaTYP,Predicted lifestyle,,,,,,
-GCA_028515195.1,72.6,0.9916,temperate,,,,,,
-GCA_027582695.1,84.2,0.9141,temperate,,,,,,
-GCA_028515145.1,79.6,0.5026,temperate,,,,,,
-GCA_014656645.1,87.7,0.9989,temperate,,,,,,
-GCA_002605545.1,90.8,0.9998,temperate,,,,,,
-GCA_028514995.1,78.8,0.9997,temperate,,,,,,
-GCA_004989725.1,86.6,0.9842,temperate,,,,,,
-GCA_028515085.1,93.9,0.5752,temperate,,,,,,
-mean,85.4,98.8,,,,,,,

@@ -1,4 +1,0 @@
-Desvantagens:
-
-PHACTS -> preciso converter seq de nucleotidos para aa (fiz usando: https://www.bioinformatics.org/sms2/translate.html, table 11: (transl_table=11) de https://www.ncbi.nlm.nih.gov/Taxonomy/taxonomyhome.html/index.cgi?chapter=cgencodes#SG11
-

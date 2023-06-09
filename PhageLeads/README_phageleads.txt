@@ -1,0 +1,1 @@
+There is a small script developed of PhageLeads. However, it doesn't perform all functionalities. It only performs the abricate functionality. 
