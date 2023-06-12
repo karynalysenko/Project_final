@@ -55,12 +55,17 @@ for gca_id in phatyp_complete['fasta_name']:
 #score mean
 temperate_scores_phageai = phageai_complete.loc[phageai_complete['phageai_predicted_lifestyle'] == 'Temperate', 'phageai_prediction_accuracy'].mean()
 temperate_scores_phatyp = phatyp_complete.loc[phatyp_complete['phatyp_Pred'] == 'temperate', 'phatyp_Score'].mean()
+virulent_scores_phageai = phageai_complete.loc[phageai_complete['phageai_predicted_lifestyle'] == 'Virulent', 'phageai_prediction_accuracy'].mean()
+virulent_scores_phatyp = phatyp_complete.loc[phatyp_complete['phatyp_Pred'] == 'virulent', 'phatyp_Score'].mean()
 
 print(f"PhageAI: virulent count is {len(phageai_virulent_count)} temperate count is {len(phageai_temperate_count)}" )
 print(f"PhaTYP: virulent count is {len(phatyp_virulent_count)} temperate count is {len(phatyp_temperate_count)}" )
 
 print("Mean score for temperate rows in PhageAI:", temperate_scores_phageai)
+print("Mean score for virulent rows in PhageAI:", virulent_scores_phageai)
+
 print("Mean score for temperate rows in PhaTYP:", temperate_scores_phatyp*100)
+print("Mean score for virulent rows in PhaTYP:", virulent_scores_phatyp*100)
 
 matching_temperates=[]
 for i in phatyp_temperate_count["fasta_name"]:
