@@ -1,15 +1,9 @@
 import os
 import re
 
-
 # cd PhaBOX (be in directory of PhaBOX)
 # conda activate phabox (activate phabox env)
 # run this file: python /home/karyna/Project/PhaTYP/phatyp.py (depends on user directory)
-
-
-# start_subdirectory = '/home/karyna/Project/data/GCA_000887755.1'
-
-#test='/home/karyna/Project/data/GCA_004015525.1/GCA_004015525.1_ASM401552v1_genomic.fna'
 
 main_dir_path = '/home/karyna/Project/data'
 rootpth = '/home/karyna/Project/PhaTYP/phatyp_results/'

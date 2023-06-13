@@ -4,7 +4,6 @@ import os
 # folder_path = r"C:\Users\Karyna\Desktop\Github\Project\data"
 
 #install abricate
-#install any2fasta
 
 main_dir_path = '/home/karyna/Project/data'
 

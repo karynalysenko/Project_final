@@ -1,1 +1,2 @@
 There is a small script developed of PhageLeads. However, it doesn't perform all functionalities. It only performs the abricate functionality. 
+The results "online_results.ods" were manually collected and written.
