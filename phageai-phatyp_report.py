@@ -11,7 +11,7 @@ report2 = pd.read_csv("/home/karyna/Project_final/PhageAI/phageai_report2.csv").
 phageai_complete = pd.concat([report1,report2], axis = 0)
 print(phageai_complete.head())
 # print(phageai_complete.shape)
-
+phageai_complete.to_csv('out.csv', index=True)
 #PhaTYP######################################### getting results into a variable phatyp_complete
 
 directory = "/home/karyna/Project_final/PhaTYP/phatyp_results"
@@ -33,6 +33,10 @@ for path in paths_aux(directory).values():
         report['fasta_name'] = GCA_id
         phatyp_complete = pd.concat([phatyp_complete, report], ignore_index=True)
 print(phatyp_complete.head())
+# print(phageai_complete.shape)
+
+# Save PhaTYP results into csv file
+# phatyp_complete.to_csv('out.csv', index=True)
 
 
 #JOIN OF PHAGEAI AND PHATYP##################################

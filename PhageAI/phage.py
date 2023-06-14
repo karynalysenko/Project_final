@@ -83,4 +83,3 @@ with open(csv_file, 'w') as csv_file:
         }
         writer.writerow(data_to_write)
     print('done')
-
